@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.9_10-jdk-jammy AS builder
+FROM eclipse-temurin:21.0.12_8-jdk-jammy AS builder
 
 ENV AWS_REGION=eu-west-2
 
@@ -26,7 +26,7 @@ ENV BUILD_NUMBER ${BUILD_NUMBER:-1_0_0}
 COPY . .
 RUN ./gradlew assemble -Dorg.gradle.daemon=false
 
-FROM eclipse-temurin:21.0.9_10-jre-jammy
+FROM eclipse-temurin:21.0.12_8-jre-jammy
 LABEL maintainer="HMPPS Digital Studio <info@digital.justice.gov.uk>"
 
 ARG BUILD_NUMBER
