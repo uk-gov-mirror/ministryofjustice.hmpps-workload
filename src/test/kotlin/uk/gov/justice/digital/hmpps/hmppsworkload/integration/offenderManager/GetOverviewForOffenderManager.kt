@@ -90,7 +90,7 @@ class GetOverviewForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManagers/$offenderManagerCode")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -170,7 +170,7 @@ class GetOverviewForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManagers/$offenderManagerCode")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -191,7 +191,7 @@ class GetOverviewForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManagers/$offenderManagerCode")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -249,7 +249,7 @@ class GetOverviewForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManagers/$offenderManagerCode")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -286,7 +286,7 @@ class GetOverviewForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManagers/$offenderManagerCode")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

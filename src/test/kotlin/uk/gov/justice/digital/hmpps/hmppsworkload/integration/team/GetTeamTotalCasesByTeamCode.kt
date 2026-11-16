@@ -24,7 +24,7 @@ class GetTeamTotalCasesByTeamCode : IntegrationTestBase() {
 
     webTestClient.get()
       .uri("/team/workloadcases?teams=$teamCode")
-      .headers { it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT")) }
+      .headers { it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE")) }
       .exchange()
       .expectStatus()
       .isOk

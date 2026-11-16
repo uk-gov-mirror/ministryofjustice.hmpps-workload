@@ -24,7 +24,7 @@ class ContactLoggingController(
       ApiResponse(responseCode = "500", description = "Internal server error"),
     ],
   )
-  @PreAuthorize("hasAnyRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE','ROLE_WORKLOAD_MEASUREMENT','ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasAnyRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @PostMapping("allocations/contact/logging")
   suspend fun logAllocationContact(@RequestBody(required = true) message: ContactLoggingMessage): Boolean = contactLoggingService.logContact(message)
 }

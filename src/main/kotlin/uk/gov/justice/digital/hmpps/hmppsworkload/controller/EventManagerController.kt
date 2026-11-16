@@ -34,7 +34,7 @@ class EventManagerController(private val getEventManager: JpaBasedGetEventManage
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("\${event.manager.getByIdPath}")
   suspend fun getEventManagerById(@PathVariable(required = true) id: UUID): EventManagerDetails {
     var eventManager = getEventManager.findById(id) ?: throw EntityNotFoundException("Event Manager not found for id $id")
@@ -51,7 +51,7 @@ class EventManagerController(private val getEventManager: JpaBasedGetEventManage
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("/allocation/person/{crn}/event/{eventNumber}/details")
   suspend fun getCaseDetailsForEventManager(
     @PathVariable(required = true) crn: String,
@@ -65,7 +65,7 @@ class EventManagerController(private val getEventManager: JpaBasedGetEventManage
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("/allocation/person/{crn}/event/{eventNumber}/complete-details")
   suspend fun getCompleteDetailsForEventManager(
     @PathVariable(required = true) crn: String,
@@ -78,7 +78,7 @@ class EventManagerController(private val getEventManager: JpaBasedGetEventManage
       ApiResponse(responseCode = "200", description = "OK"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @PostMapping("/allocation/events/teams/count")
   suspend fun getAllocationCountByLoggedInUsersTeam(
     @RequestParam(required = true)
@@ -93,7 +93,7 @@ class EventManagerController(private val getEventManager: JpaBasedGetEventManage
       ApiResponse(responseCode = "200", description = "OK"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @PostMapping("/allocation/events/teams")
   suspend fun getAllocationsByUsersTeams(
     @RequestParam(required = true)

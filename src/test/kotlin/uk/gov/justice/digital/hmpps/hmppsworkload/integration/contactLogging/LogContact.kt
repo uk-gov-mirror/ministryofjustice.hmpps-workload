@@ -15,7 +15,7 @@ class LogContact : IntegrationTestBase() {
       .uri("/allocations/contact/logging")
       .body(BodyInserters.fromValue(contactLoggingMessage))
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

@@ -39,7 +39,7 @@ class GetAllocatedEventsCount : IntegrationTestBase() {
         "/allocation/events/teams/count?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
@@ -74,7 +74,7 @@ class GetAllocatedEventsCount : IntegrationTestBase() {
         "/allocation/events/teams/count?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
@@ -105,7 +105,7 @@ class GetAllocatedEventsCount : IntegrationTestBase() {
         "/allocation/events/teams/count?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()

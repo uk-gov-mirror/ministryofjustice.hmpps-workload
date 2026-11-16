@@ -26,7 +26,7 @@ class RequirementManagerController(private val getRequirementManager: GetRequire
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("\${requirement.manager.getByIdPath}")
   suspend fun getRequirementManagerById(@PathVariable(required = true) id: UUID): RequirementManagerDetails {
     var requirementManager = getRequirementManager.findById(id)?.let { requirementManagerEntity -> RequirementManagerDetails.from(requirementManagerEntity) } ?: run {

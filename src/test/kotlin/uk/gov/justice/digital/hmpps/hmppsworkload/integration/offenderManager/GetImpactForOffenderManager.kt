@@ -23,7 +23,7 @@ class GetImpactForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManager/$staffCode/impact/person/$crn")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
         it.contentType = MediaType.APPLICATION_JSON
       }
       .exchange()
@@ -67,7 +67,7 @@ class GetImpactForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManager/$staffCode/impact/person/$crn")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
         it.contentType = MediaType.APPLICATION_JSON
       }
       .exchange()
@@ -90,7 +90,7 @@ class GetImpactForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManager/$staffCode/impact/person/$crn")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
         it.contentType = MediaType.APPLICATION_JSON
       }
       .exchange()
@@ -113,7 +113,7 @@ class GetImpactForOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri("/team/$teamCode/offenderManager/$staffCode/impact/person/$crn")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_MEASUREMENT"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
         it.contentType = MediaType.APPLICATION_JSON
       }
       .exchange()

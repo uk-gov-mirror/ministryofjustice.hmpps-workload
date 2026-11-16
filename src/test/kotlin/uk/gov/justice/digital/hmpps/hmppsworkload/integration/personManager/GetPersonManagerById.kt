@@ -15,7 +15,7 @@ class GetPersonManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/${storedPersonManager.uuid}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -38,7 +38,7 @@ class GetPersonManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/${UUID.randomUUID()}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

@@ -26,7 +26,7 @@ class GetEventManagerAllocationComplete : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/${storedEventManager.crn}/event/${storedEventManager.eventNumber}/complete-details")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -57,7 +57,7 @@ class GetEventManagerAllocationComplete : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/CRNNOMANAGER/event/1/complete-details")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

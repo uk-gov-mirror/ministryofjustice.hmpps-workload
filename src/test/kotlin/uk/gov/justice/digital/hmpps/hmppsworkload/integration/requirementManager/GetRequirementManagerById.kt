@@ -11,7 +11,7 @@ class GetRequirementManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/requirements/${UUID.randomUUID()}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

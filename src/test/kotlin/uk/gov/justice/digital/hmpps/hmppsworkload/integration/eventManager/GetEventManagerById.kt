@@ -16,7 +16,7 @@ class GetEventManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/event/${storedEventManager.uuid}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -50,7 +50,7 @@ class GetEventManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/event/${storedEventManager.uuid}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -67,7 +67,7 @@ class GetEventManagerById : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/event/${UUID.randomUUID()}")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

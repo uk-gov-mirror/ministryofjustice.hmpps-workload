@@ -490,7 +490,7 @@ class AllocateCaseToOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri(eventManagerAllocatedEvent.detailUrl.replace("https://localhost:8080", ""))
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -529,7 +529,7 @@ class AllocateCaseToOffenderManager : IntegrationTestBase() {
     webTestClient.get()
       .uri(requirementManagerAllocatedEvent.detailUrl.replace("https://localhost:8080", ""))
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

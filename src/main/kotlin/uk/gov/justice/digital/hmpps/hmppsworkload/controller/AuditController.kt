@@ -24,7 +24,7 @@ class AuditController(
       ApiResponse(responseCode = "200", description = "OK"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ') or hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @PostMapping("/audit/data")
   suspend fun auditData(@RequestBody auditData: Any, authentication: Authentication) = mawAuditService.auditData(auditData, authentication.name)
 }

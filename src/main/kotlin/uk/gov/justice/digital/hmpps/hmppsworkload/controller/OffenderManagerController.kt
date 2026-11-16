@@ -39,7 +39,7 @@ class OffenderManagerController(
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("/team/{teamCode}/offenderManager/{staffCode}/impact/person/{crn}")
   suspend fun getImpactOfAllocation(@PathVariable(required = true) teamCode: String, @PathVariable(required = true) staffCode: String, @PathVariable crn: String): OffenderManagerPotentialWorkload = getOffenderManagerService.getPotentialWorkload(StaffIdentifier(staffCode, teamCode), crn) ?: throw EntityNotFoundException("Team $teamCode and staff Code $staffCode combination not found")
 
@@ -50,7 +50,7 @@ class OffenderManagerController(
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("/team/{teamCode}/offenderManagers/{offenderManagerCode}")
   suspend fun getOverview(@PathVariable(required = true) teamCode: String, @PathVariable(required = true) offenderManagerCode: String): OffenderManagerOverview = getOffenderManagerService.getOverview(StaffIdentifier(offenderManagerCode, teamCode)) ?: run {
     throw EntityNotFoundException("Team $teamCode and offender manager $offenderManagerCode combination not found")
@@ -97,7 +97,7 @@ class OffenderManagerController(
       ApiResponse(responseCode = "404", description = "Result Not Found"),
     ],
   )
-  @PreAuthorize("hasRole('ROLE_WORKLOAD_MEASUREMENT') or hasRole('ROLE_WORKLOAD_READ')")
+  @PreAuthorize("hasRole('ROLE_MANAGE_A_WORKFORCE_ALLOCATE')")
   @GetMapping("/team/{teamCode}/offenderManagers/{offenderManagerCode}/cases")
   suspend fun getCases(@PathVariable(required = true) teamCode: String, @PathVariable(required = true) offenderManagerCode: String): OffenderManagerCases = getOffenderManagerService.getCases(StaffIdentifier(offenderManagerCode, teamCode)) ?: throw EntityNotFoundException("Team $teamCode and offender manager $offenderManagerCode combination not found")
 

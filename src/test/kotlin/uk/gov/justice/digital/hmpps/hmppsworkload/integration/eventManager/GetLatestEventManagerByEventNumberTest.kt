@@ -29,7 +29,7 @@ class GetLatestEventManagerByEventNumberTest : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/${storedEventManager.crn}/event/${storedEventManager.eventNumber}/details")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()
@@ -48,7 +48,7 @@ class GetLatestEventManagerByEventNumberTest : IntegrationTestBase() {
     webTestClient.get()
       .uri("/allocation/person/CRN1111/event/6/details")
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ"))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE"))
       }
       .exchange()
       .expectStatus()

@@ -43,7 +43,7 @@ class GetAllocatedEvents : IntegrationTestBase() {
         "/allocation/events/teams?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
@@ -92,7 +92,7 @@ class GetAllocatedEvents : IntegrationTestBase() {
         "/allocation/events/teams?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
@@ -123,7 +123,7 @@ class GetAllocatedEvents : IntegrationTestBase() {
         "/allocation/events/teams?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
@@ -158,7 +158,7 @@ class GetAllocatedEvents : IntegrationTestBase() {
         "/allocation/events/teams?since=${thirtyDaysInPast()}",
       )
       .headers {
-        it.authToken(roles = listOf("ROLE_WORKLOAD_READ", loggedInUser))
+        it.authToken(roles = listOf("ROLE_MANAGE_A_WORKFORCE_ALLOCATE", loggedInUser))
       }
       .bodyValue(teams)
       .exchange()
