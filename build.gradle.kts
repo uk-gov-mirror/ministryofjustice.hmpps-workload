@@ -1,12 +1,12 @@
 plugins {
-  id("com.gorylenko.gradle-git-properties") version "2.5.4"
+  id("com.gorylenko.gradle-git-properties") version "2.5.7"
   id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.15"
-  kotlin("plugin.spring") version "2.2.21"
-  kotlin("plugin.jpa") version "2.2.21"
-  kotlin("jvm") version "2.2.21"
+  kotlin("plugin.spring") version "2.4.21"
+  kotlin("plugin.jpa") version "2.4.21"
+  kotlin("jvm") version "2.4.21"
   id("io.gitlab.arturbosch.detekt").version("1.23.8")
-  id("org.owasp.dependencycheck") version "12.1.9"
-  kotlin("plugin.allopen").version("2.2.21")
+  id("org.owasp.dependencycheck") version "12.2.2"
+  kotlin("plugin.allopen").version("2.4.21")
 }
 
 configurations {
@@ -29,7 +29,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-webclient")
   implementation("uk.gov.justice.service.hmpps:hmpps-sqs-spring-boot-starter:7.4.1")
 
-  implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:3.1.1")
+  implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:3.2.0")
 
   implementation("org.springframework.boot:spring-boot-starter-security")
   implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
@@ -38,14 +38,14 @@ dependencies {
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-starter-web")
 
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.10.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.10.2")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.11.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.11.0")
 
   // go to open telemetry, when upgrading to spring boot 3 these can be removed
-  implementation("io.opentelemetry:opentelemetry-api:1.62.0")
-  implementation("com.microsoft.azure:applicationinsights-core:3.7.6")
-  agentDeps("com.microsoft.azure:applicationinsights-agent:3.7.6")
+  implementation("io.opentelemetry:opentelemetry-api:1.68.0")
+  implementation("com.microsoft.azure:applicationinsights-core:3.7.10")
+  agentDeps("com.microsoft.azure:applicationinsights-agent:3.7.10")
 
   implementation("uk.gov.service.notify:notifications-java-client:5.2.1-RELEASE")
   implementation("io.hypersistence:hypersistence-utils-hibernate-73:3.16.0")
@@ -57,11 +57,11 @@ dependencies {
 
   testImplementation("io.jsonwebtoken:jjwt-impl:0.13.0")
   testImplementation("io.jsonwebtoken:jjwt-jackson:0.13.0")
-  testImplementation("org.mock-server:mockserver-netty-no-dependencies:9.0.0")
+  testImplementation("org.mock-server:mockserver-netty-no-dependencies:9.3.0")
   testImplementation("org.awaitility:awaitility-kotlin:4.3.0")
-  testImplementation("io.mockk:mockk:1.14.7")
+  testImplementation("io.mockk:mockk:1.14.12")
   testImplementation("com.ninja-squad:springmockk:4.0.2")
-  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
   testImplementation("org.springframework.boot:spring-boot-webtestclient")
 }
 repositories {
